@@ -20,6 +20,7 @@ RUN \
 	wget && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
+        bind-tools \
 	inotify-tools \
 	perl \
 	perl-digest-sha1 \
