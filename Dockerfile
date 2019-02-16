@@ -4,7 +4,7 @@ FROM lsiobase/alpine:3.7
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="saarg"
+LABEL maintainer="putty182"
 
 # package versions
 ARG DDCLIENT_VER="3.8.3"
