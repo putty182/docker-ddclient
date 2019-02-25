@@ -1,11 +1,14 @@
-FROM lsiobase/alpine:3.9
+FROM lsiobase/alpine.arm64:3.9
+
+# Add qemu to build on x86_64 systems
+COPY qemu-aarch64-static /usr/bin
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 ARG DDCLIENT_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="putty182"
+LABEL maintainer="saarg"
 
 RUN \
  echo "**** install build packages ****" && \
@@ -18,7 +21,6 @@ RUN \
 	wget && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
-        bind-tools \
 	inotify-tools \
 	jq \
 	perl \
